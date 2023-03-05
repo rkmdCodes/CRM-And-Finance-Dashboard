@@ -34,7 +34,9 @@ app.use("/sales", salesRoutes);
 /* Data Import */
 
 import User from "./models/User.js";
-import {dataUser} from "./data/index.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
+import {dataUser,dataProduct,dataProductStat} from "./data/index.js";
 
 
 const PORT = process.env.PORT || 9000;
@@ -48,7 +50,10 @@ mongoose
       console.log(`Server started at ${PORT}`);
 
     });
+ 
 
+  // Product.insertMany(dataProduct);
+  // ProductStat.insertMany(dataProductStat);  
   //  User.insertMany(dataUser);
 
   })
