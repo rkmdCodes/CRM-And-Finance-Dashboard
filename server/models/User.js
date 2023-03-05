@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     city:String,
     state:String,
     country:String,
-    occupution:String,
+    occupation:String,
     phoneNumber:String,
     transacitons:Array,
     role:{

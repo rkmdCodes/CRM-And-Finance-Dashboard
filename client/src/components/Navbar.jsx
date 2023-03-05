@@ -72,7 +72,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           <IconButton>
             <SettingsOutlined style={{ fontSize: "25px" }} />
           </IconButton>
-
+   
           <FlexBetween>
             <Button
               onClick={handleClick}
@@ -94,10 +94,24 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 style={{ objectFit: "cover" }}
               />
               <Box textAlign="left">
-              </Box>
+                <Typography
+                  fontWeight="bold"
+                  fontSize="0.85rem"
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                 {user.name}
+                </Typography>
+                <Typography
+                  fontSize="0.75rem"
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                 {user.occupation}
+                </Typography>
+                </Box>
               <ArrowDropDownOutlined
-                style={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
               />
+          
             </Button>
             <Menu
               anchorEl={anchorEl}

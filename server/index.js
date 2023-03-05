@@ -49,7 +49,7 @@ mongoose
 
     });
 
-   // User.insertMany(dataUser);
+  //  User.insertMany(dataUser);
 
   })
   .catch((error) => {
