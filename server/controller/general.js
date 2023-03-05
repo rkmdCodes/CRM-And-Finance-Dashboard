@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 
 const getUser = async (req , res )=>{
- 
+    console.log("req is received ",req.params);
     try{
         const {id} = req.params;
         const user = await User.findById(id);
@@ -9,7 +9,7 @@ const getUser = async (req , res )=>{
 
     }catch(error)
     {
-        res.status(404).json({message:error.message});
+        res.status(403).json({message:error.message});
     }
 
 }
