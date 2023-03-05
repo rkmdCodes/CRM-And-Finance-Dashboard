@@ -10,6 +10,8 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
+
+
 /* Initialisations */
 
 dotenv.config();
@@ -29,6 +31,12 @@ app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
+/* Data Import */
+
+import User from "./models/User.js";
+import {dataUser} from "./data/index.js";
+
+
 const PORT = process.env.PORT || 9000;
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -38,7 +46,11 @@ mongoose
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server started at ${PORT}`);
+
     });
+
+   // User.insertMany(dataUser);
+
   })
   .catch((error) => {
     {
