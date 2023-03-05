@@ -104,7 +104,6 @@ const Sidebar = ({
   const navigate = useNavigate();
   const theme = useTheme();
  
-  console.log(theme.palette.secondary[200]," is alt.");
 
   useEffect(() => {
     setActive(pathname.substring(1));
