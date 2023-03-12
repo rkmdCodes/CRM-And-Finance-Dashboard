@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 import Product from "../models/Product.js";
 import ProductStat from "../models/ProductStat.js";
+import User from "../models/User.js";
 
-const getProduct = async (req, res) => {
+export const getProducts = async (req, res) => {
   try {
     const { id } = req.body;
     const products = await Product.find(id);
@@ -21,10 +22,16 @@ const getProduct = async (req, res) => {
     );
 
     res.status(200).json(productsWithStats);
-
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-export default getProduct;
+export const getCustomers = async (req, res) => {
+  try {
+    const customers = await User.find({ role: "user" }).select("-password");
+    res.status(200).json(customers);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
