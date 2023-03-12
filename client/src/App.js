@@ -8,7 +8,7 @@ import Layout from "scenes/layout/index.jsx";
 import Dashboard from "scenes/dashboard/index.jsx";
 import Products from "scenes/product/index.jsx";
 import Customers from  "scenes/customers";
- 
+import Transactions from "scenes/transactions";
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products/>} />
               <Route path="/customers" element={<Customers/>} />
+              <Route path="/transactions" element={<Transactions/>} />
             </Route>
           </Routes>
         </ThemeProvider> 

@@ -54,7 +54,7 @@ const Customers = () => {
   // console.log('cutomers data is ',data);
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="Customers" subTitle="List Of Customers" />
+      <Header title="CUSTOMERS" subTitle="List Of Customers" />
       <Box mt="40px " height="75vh"
       
       sx = {{
