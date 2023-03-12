@@ -60,12 +60,12 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           </FlexBetween>
         </FlexBetween>
 
-        {/* RIGHT SIDE */}
-        <FlexBetween gap="1.5rem">
-          <IconButton onClick={() => dispatch(setMode())}>
-            {theme.palette.mode === "dark" ? (
-              <DarkModeOutlined style={{ fontSize: "25px" }} />
-            ) : (
+        {/* RIGHT SIDE */}                 
+        <FlexBetween gap="1.5rem">                      
+          <IconButton onClick={() => dispatch(setMode())}>              
+            {theme.palette.mode === "dark" ? (              
+              <DarkModeOutlined style={{ fontSize: "25px" }} />        
+            ) : (            
               <LightModeOutlined style={{ fontSize: "25px" }} />
             )}
           </IconButton>
