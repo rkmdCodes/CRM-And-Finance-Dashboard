@@ -10,8 +10,6 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
-
-
 /* Initialisations */
 
 dotenv.config();
@@ -37,10 +35,17 @@ import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";
-import  OverallStat from "./models/OverallStat.js"
+import OverallStat from "./models/OverallStat.js";
+import AffilateStat from "./models/AffiliateStat.js";
 
-import {dataUser,dataProduct,dataProductStat,dataTransaction,dataOverallStat} from "./data/index.js";
-
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+  dataOverallStat,
+  dataAffiliateStat,
+} from "./data/index.js";
 
 const PORT = process.env.PORT || 9000;
 mongoose
@@ -51,15 +56,14 @@ mongoose
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server started at ${PORT}`);
-
     });
- 
 
-  // Product.insertMany(dataProduct);
-  // ProductStat.insertMany(dataProductStat);  
-  // Transaction.insertMany(dataTransaction);
-  //  User.insertMany(dataUser);
-  //  OverallStat.insertMany(dataOverallStat);
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
+    // Transaction.insertMany(dataTransaction);
+    //  User.insertMany(dataUser);
+    //  OverallStat.insertMany(dataOverallStat);
+    //AffilateStat.insertMany(dataAffiliateStat);
   })
   .catch((error) => {
     {
