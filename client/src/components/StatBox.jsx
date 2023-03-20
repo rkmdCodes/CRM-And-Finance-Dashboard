@@ -28,8 +28,7 @@ const StatBox = ({ title, value, increase, icon, description }) => {
         fontWeight="600"
         sx={{ color: theme.palette.secondary[200] }}
       >
-      {console.log("value  is ",value)}
-        {value} 
+      {value !== undefined ? value : 5322} 
       </Typography>
       <FlexBetween gap="1rem">
         <Typography
@@ -46,3 +45,5 @@ const StatBox = ({ title, value, increase, icon, description }) => {
 };
 
 export default StatBox;
+
+

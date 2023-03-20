@@ -1,0 +1,12 @@
+Hi! I'm Rajat. I want to pitch you for role of software developer intern at Nbyula.
+
+I have attached my resume and my GitHub is @rkmdCodes but here's a quick overview of my work.
+
+1) Contribution to Open source projects including updating technical documentation for Kubernetes and UI improvements on the Elk-zone app used by mastodon users.
+2) Tens of side projects in varying tech stacks from MERN to vanilla JS and many cloud-based deployments strategies with CDN, workflows, etc   
+3) My learning has an emphasis on reliability, scalability, and performance. My stack includes Reactjs, Nodejs, Aws, Expressjs, MongoDB, etc
+4) Solved more than 600 problems on leetcode to increase my problem solving ability.
+5)Exceptional Academics performance too around 9 CGPA out of 10
+
+Thanks and looking forward to this opportunity! 
+Rajat

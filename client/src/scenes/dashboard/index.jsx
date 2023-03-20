@@ -1,6 +1,8 @@
-import React from "react";
+import React , {useRef} from "react";
 import FlexBetween from "components/FlexBetween";
 import Header from "components/Header";
+import ReactToPrint from "react-to-print";
+
 import {
   DownloadOutlined,
   Email,
@@ -20,12 +22,16 @@ import BreakdownChart from "components/breakdown.jsx";
 import OverviewChart from "components/overviewChart.jsx";
 import { useGetDashboardQuery } from "state/api";
 import StatBox from "components/StatBox";
+import { style } from "@mui/system";
+
 
 const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
-  console.log(data);
+  const componentRef = useRef();
+  
+
   const columns = [
     {
       field: "_id",
@@ -58,23 +64,24 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box m="1.5rem 2.5rem" ref={componentRef}>
       <FlexBetween>
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box>
-          <Button
-            sx={{
-              backgroundColor: theme.palette.secondary.light,
-              color: theme.palette.background.alt,
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlined sx={{ mr: "10px" }} />
-            Download Reports
-          </Button>
+            <ReactToPrint trigger={()=>(<Button
+        
+              sx={{
+                backgroundColor: theme.palette.secondary.light,
+                color: theme.palette.background.alt,
+                fontSize: "14px",
+                fontWeight: "bold",
+                padding: "10px 20px",
+              }}
+            >
+              <DownloadOutlined sx={{ mr: "10px" }} />
+               Download Report
+          </Button>)} content={()=>componentRef.current}  />
         </Box>
       </FlexBetween>
 
@@ -89,6 +96,7 @@ const Dashboard = () => {
         }}
       >
         {/* ROW 1 */}
+        
         <StatBox
           title="Total Customers"
           value={data && data.totalCustomers}

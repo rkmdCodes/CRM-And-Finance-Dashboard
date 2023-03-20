@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useGetProductsQuery } from "state/api";
-
 import Header from "components/Header.jsx";
 import {
   Box,
@@ -24,6 +23,7 @@ const Product = ({
   rating,
   category,
   supply,
+  sold,
   stat,
 }) => {
   const theme = useTheme();
@@ -73,9 +73,10 @@ const Product = ({
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
+          
           <Typography>Supply Left: {supply}</Typography>
           <Typography>
-            Yearly Sales This Year : {stat.yearlySalesTotal}
+            Yearly Sales This Year : {sold}
           </Typography>
           <Typography>
             Yearly Units Sold This Year : {stat.yearlyTotalSoldUnits}
@@ -116,8 +117,10 @@ const Products = () => {
               rating,
               category,
               supply,
+              sold,
               stat,
             }) =>(
+             
               <Product 
               key = {_id}
               _id = {_id}
@@ -127,6 +130,7 @@ const Products = () => {
               rating = {rating}
               category = {category}
               supply = {supply}
+              sold={stat.yearlyTotalSoldUnits}
               stat = {stat}
               />
             )
